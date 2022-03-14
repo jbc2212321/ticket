@@ -3,6 +3,7 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"ticket/middleware"
 	"ticket/util"
 )
 
@@ -24,10 +25,13 @@ func Login(c *gin.Context) {
 	// 判断用户名密码是否正确
 	if json.User != "root" || json.Password != "admin" {
 		c.JSON(http.StatusBadRequest, gin.H{"status": "304"})
+		middleware.Log.Infof("手机号或者密码错误,phone:[%s],password:[%s]", json.User, json.Password)
 		return
 	}
-	resp := util.Response{}
-	resp["status"] = "200"
-	resp["message"] = "OK"
+	resp := util.Response{
+		Status:  http.StatusOK,
+		Code:    0,
+		Message: "OK",
+	}
 	c.JSON(http.StatusOK, resp)
 }

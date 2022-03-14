@@ -24,7 +24,7 @@ func TestDb(t *testing.T) {
 }
 
 func TestDb2(t *testing.T) {
-	b := userDao.CheckUser(123, 1)
+	b := userDao.CheckUser(123, 0, "2212321")
 	fmt.Println(b)
 }
 

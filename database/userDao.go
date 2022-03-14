@@ -3,6 +3,7 @@ package database
 import (
 	"database/sql"
 	"fmt"
+	"ticket/util"
 	"time"
 )
 
@@ -24,7 +25,8 @@ func (m *User) TableName() string {
 type UserImpl struct {
 }
 
-func (u *UserImpl) CheckUser(phone, category int64) bool {
+//验证是否存在用户
+func (u *UserImpl) ExistUser(phone, category int64) bool {
 	db := GetDB()
 	var user User
 	err := db.Model(&User{}).Where("phone = ? and type = ? and is_delete=0", phone, category).First(&user).Error
@@ -43,4 +45,22 @@ func (u *UserImpl) AddUser(user *User) error {
 		return err
 	}
 	return nil
+}
+
+//用户登录
+func (u *UserImpl) CheckUser(phone, category int64, password string) bool {
+	db := GetDB()
+	var user User
+	queryMap := make(map[string]string, 0)
+	queryMap["phone"] = util.TranToString(phone)
+	queryMap["type"] = util.TranToString(category)
+	queryMap["is_delete"] = "0"
+	queryMap["password"] = password
+	err := db.Model(&User{}).Where(queryMap).First(&user).Error
+	if err != nil {
+		//err==gorm.ErrRecordNotFound
+		return false
+	}
+	fmt.Println(user)
+	return true
 }
