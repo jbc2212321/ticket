@@ -1,0 +1,4 @@
+mysql:
+  username: root
+  password: "111111"
+  dbname: mydb
