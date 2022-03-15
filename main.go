@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"ticket/middleware"
 	"ticket/routers"
@@ -15,7 +14,8 @@ func main() {
 
 	r.GET("/", routers.Hello)
 	r.POST("/checkUser", routers.Login)
+	//用户注册
+	r.POST("/addUser", routers.Register)
 
 	_ = r.Run(":8096")
-	fmt.Println("???")
 }

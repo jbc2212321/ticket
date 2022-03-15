@@ -1,0 +1,17 @@
+{"level":"info","msg":"手机号或者密码错误","time":"2022-03-15 00:31:56.807"}
+{"latency_time":17821300,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/checkUser","status_code":400,"time":"2022-03-15 00:31:56.824"}
+{"level":"info","msg":"手机号或者密码错误,phone:[%s],password:[%s]rootadmin2","time":"2022-03-15 00:35:41.445"}
+{"latency_time":17152600,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/checkUser","status_code":400,"time":"2022-03-15 00:35:41.461"}
+{"level":"info","msg":"手机号或者密码错误,phone:[root],password:[admin2]","time":"2022-03-15 00:36:27.189"}
+{"latency_time":17761500,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/checkUser","status_code":400,"time":"2022-03-15 00:36:27.206"}
+{"latency_time":687000,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/checkUser","status_code":200,"time":"2022-03-15 16:30:56.702"}
+{"level":"info","msg":"json解析失败[\u0026{POST /addUser HTTP/1.1 %!s(int=1) %!s(int=1) map[Accept:[*/*] Accept-Encoding:[gzip, deflate, br] Connection:[keep-alive] Content-Length:[96] Content-Type:[application/json] Postman-Token:[add7c262-2595-4138-974e-e1547a296538] User-Agent:[PostmanRuntime/7.26.8]] %!s(*http.body=\u0026{0xc00028e2d0 \u003cnil\u003e \u003cnil\u003e false true {0 0} true false false 0x4c70a0}) %!s(func() (io.ReadCloser, error)=\u003cnil\u003e) %!s(int64=96) [] %!s(bool=false) localhost:8096 map[] map[] %!s(*multipart.Form=\u003cnil\u003e) map[] [::1]:59819 /addUser %!s(*tls.ConnectionState=\u003cnil\u003e) %!s(\u003c-chan struct {}=\u003cnil\u003e) %!s(*http.Response=\u003cnil\u003e) %!s(*context.cancelCtx=\u0026{0xc00030b940 {0 0} {\u003cnil\u003e} map[] \u003cnil\u003e})}]","time":"2022-03-15 16:33:05.821"}
+{"latency_time":1846700,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":400,"time":"2022-03-15 16:33:05.823"}
+{"latency_time":758400,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/checkUser","status_code":200,"time":"2022-03-15 16:36:57.579"}
+{"level":"info","msg":"注册失败,user[\u0026{Id:6909420303223357440 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 16:49:31.1108359 +0800 CST m=+3.570175801 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 16:49:31.124"}
+{"latency_time":37556000,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 16:49:31.125"}
+{"error":"Error 1264: Out of range value for column 'phone' at row 1","level":"info","msg":"注册失败,user[\u0026{Id:6909421729978777600 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 16:55:11.2753993 +0800 CST m=+3.479837601 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 16:55:11.278"}
+{"latency_time":22823400,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 16:55:11.280"}
+{"latency_time":9774500,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 16:58:03.877"}
+{"level":"info","msg":"该用户已经注册过,phone[13800000000],type[0]","time":"2022-03-15 16:58:05.432"}
+{"latency_time":3029800,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 16:58:05.432"}
