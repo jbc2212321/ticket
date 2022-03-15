@@ -9,29 +9,28 @@ import (
 
 type LoginParam struct {
 	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段
-	User     string `form:"username" json:"phone" uri:"user" xml:"user" binding:"required"`
+	Phone    string `form:"username" json:"phone" uri:"user" xml:"user" binding:"required"`
 	Password string `form:"password" json:"password" uri:"password" xml:"password" binding:"required"`
+	Category string `json:"value" binding:"required"`
 }
 
 func Login(c *gin.Context) {
 	var json LoginParam
+	resp := util.GetResponse()
 	// 将request的body中的数据，自动按照json格式解析到结构体
 	if err := c.ShouldBindJSON(&json); err != nil {
-		// 返回错误信息
-		// gin.H封装了生成json数据的工具
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		resp.Data = false
+		c.JSON(http.StatusBadRequest, resp)
+		middleware.Log.Infof("json解析失败[%s]", c.Request)
 		return
 	}
 	// 判断用户名密码是否正确
-	if json.User != "root" || json.Password != "admin" {
-		c.JSON(http.StatusBadRequest, gin.H{"status": "304"})
-		middleware.Log.Infof("手机号或者密码错误,phone:[%s],password:[%s]", json.User, json.Password)
+	if !userDao.CheckUser(util.TranToInt64(json.Phone), util.TranToInt64(json.Category), json.Password) {
+		resp.Data = false
+		middleware.Log.Infof("手机号或者密码错误,phone:[%s],password:[%s]", json.Phone, json.Password)
 		return
 	}
-	resp := util.Response{
-		Status:  http.StatusOK,
-		Code:    0,
-		Message: "OK",
-	}
+
+	resp.Data = true
 	c.JSON(http.StatusOK, resp)
 }
