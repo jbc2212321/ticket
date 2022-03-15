@@ -23,3 +23,63 @@ time="2022-03-15T16:55:11+08:00" level=info latency_time=22.8234ms remote_ip="::
 time="2022-03-15T16:58:03+08:00" level=info latency_time=9.7745ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
 time="2022-03-15T16:58:05+08:00" level=info msg="该用户已经注册过,phone[13800000000],type[0]"
 time="2022-03-15T16:58:05+08:00" level=info latency_time=3.0298ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T18:46:08+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T18:46:23+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:46:23+08:00" level=info msg="手机号或者密码错误,phone:[138],password:[03]"
+time="2022-03-15T18:46:23+08:00" level=info latency_time=11.2522ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:48:08+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:48:08+08:00" level=info msg="手机号或者密码错误,phone:[138],password:[03]"
+time="2022-03-15T18:48:08+08:00" level=info latency_time=5.3119ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:48:13+08:00" level=info msg="手机号或者密码错误,phone:[138],password:[03]"
+time="2022-03-15T18:48:13+08:00" level=info latency_time=3.4757ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:48:15+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T18:48:21+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:48:21+08:00" level=info latency_time=3.179ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:48:28+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:48:28+08:00" level=info latency_time=3.1812ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:49:52+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:49:52+08:00" level=info latency_time=4.4172ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:49:55+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T18:50:01+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:50:01+08:00" level=info latency_time=2.894ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:53:46+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T18:53:53+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:53:53+08:00" level=info latency_time=2.867ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:58:03+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T18:58:21+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T18:58:27+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:58:27+08:00" level=info latency_time=3.208ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:59:36+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T18:59:42+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:59:42+08:00" level=info latency_time=3.9343ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:59:42+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/getDocsPatient status_code=204
+time="2022-03-15T18:59:42+08:00" level=info latency_time=0s remote_ip="::1" req_method=POST req_uri=/getDocsPatient status_code=404
+time="2022-03-15T18:59:42+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/getDoctorName status_code=204
+time="2022-03-15T18:59:42+08:00" level=info latency_time=0s remote_ip="::1" req_method=POST req_uri=/getDoctorName status_code=404
+time="2022-03-15T18:59:52+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T18:59:52+08:00" level=info msg="手机号或者密码错误,phone:[138],password:[03]"
+time="2022-03-15T18:59:52+08:00" level=info latency_time=33.4034ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T18:59:55+08:00" level=info msg="手机号或者密码错误,phone:[138],password:[03]"
+time="2022-03-15T18:59:55+08:00" level=info latency_time=6.5413ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T19:00:30+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-15T19:01:22+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/addUser status_code=204
+time="2022-03-15T19:01:22+08:00" level=info latency_time=12.098ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T19:02:19+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-15T19:02:19+08:00" level=info latency_time=2.989ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-15T19:02:19+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/getAdminName status_code=204
+time="2022-03-15T19:02:19+08:00" level=info latency_time="505.4µs" remote_ip="::1" req_method=GET req_uri=/getAllDocAndPatient status_code=404
+time="2022-03-15T19:02:19+08:00" level=info latency_time=0s remote_ip="::1" req_method=POST req_uri=/getAdminName status_code=404
+time="2022-03-15T22:30:36+08:00" level=info msg="注册失败,user[&{Id:6909506121656958976 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:30:31.8199169 +0800 CST m=+15.005209601 IsDelete:0 Ext:{String: Valid:false}}]" error="dial tcp: lookup 111111: no such host"
+time="2022-03-15T22:30:36+08:00" level=info latency_time=13.7086989s remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:31:43+08:00" level=info msg="注册失败,user[&{Id:6909506402247507968 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:31:38.7178884 +0800 CST m=+14.136102001 IsDelete:0 Ext:{String: Valid:false}}]" error="dial tcp: lookup 111111: no such host"
+time="2022-03-15T22:31:43+08:00" level=info latency_time=13.6809697s remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:32:23+08:00" level=info msg="注册失败,user[&{Id:6909506570262937600 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:32:18.7755562 +0800 CST m=+12.305912201 IsDelete:0 Ext:{String: Valid:false}}]" error="dial tcp: lookup 123456: no such host"
+time="2022-03-15T22:32:23+08:00" level=info latency_time=13.6584527s remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:33:07+08:00" level=info msg="注册失败,user[&{Id:6909506754774564864 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:33:02.7662395 +0800 CST m=+14.537790701 IsDelete:0 Ext:{String: Valid:false}}]" error="dial tcp: lookup 123456: no such host"
+time="2022-03-15T22:33:07+08:00" level=info latency_time=13.6922085s remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:33:26+08:00" level=info msg="注册失败,user[&{Id:6909506833170300928 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:33:21.4570431 +0800 CST m=+33.228594301 IsDelete:0 Ext:{String: Valid:false}}]" error="dial tcp: lookup 123456: no such host"
+time="2022-03-15T22:33:26+08:00" level=info latency_time=13.6644885s remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:34:38+08:00" level=info msg="注册失败,user[&{Id:6909507138805039104 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:34:34.3265138 +0800 CST m=+11.435203001 IsDelete:0 Ext:{String: Valid:false}}]" error="dial tcp: lookup 123456: no such host"
+time="2022-03-15T22:34:38+08:00" level=info latency_time=13.6710536s remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:35:19+08:00" level=info msg="该用户已经注册过,phone[13800000000],type[0]"
+time="2022-03-15T22:35:19+08:00" level=info latency_time=342.9667ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200

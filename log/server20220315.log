@@ -61,3 +61,17 @@
 {"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/getAdminName","status_code":204,"time":"2022-03-15 19:02:19.535"}
 {"latency_time":505400,"level":"info","msg":"","remote_ip":"::1","req_method":"GET","req_uri":"/getAllDocAndPatient","status_code":404,"time":"2022-03-15 19:02:19.537"}
 {"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/getAdminName","status_code":404,"time":"2022-03-15 19:02:19.537"}
+{"error":"dial tcp: lookup 111111: no such host","level":"info","msg":"注册失败,user[\u0026{Id:6909506121656958976 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:30:31.8199169 +0800 CST m=+15.005209601 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 22:30:36.375"}
+{"latency_time":13708698900,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 22:30:36.376"}
+{"error":"dial tcp: lookup 111111: no such host","level":"info","msg":"注册失败,user[\u0026{Id:6909506402247507968 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:31:38.7178884 +0800 CST m=+14.136102001 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 22:31:43.275"}
+{"latency_time":13680969700,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 22:31:43.276"}
+{"error":"dial tcp: lookup 123456: no such host","level":"info","msg":"注册失败,user[\u0026{Id:6909506570262937600 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:32:18.7755562 +0800 CST m=+12.305912201 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 22:32:23.316"}
+{"latency_time":13658452700,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 22:32:23.318"}
+{"error":"dial tcp: lookup 123456: no such host","level":"info","msg":"注册失败,user[\u0026{Id:6909506754774564864 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:33:02.7662395 +0800 CST m=+14.537790701 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 22:33:07.324"}
+{"latency_time":13692208500,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 22:33:07.325"}
+{"error":"dial tcp: lookup 123456: no such host","level":"info","msg":"注册失败,user[\u0026{Id:6909506833170300928 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:33:21.4570431 +0800 CST m=+33.228594301 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 22:33:26.013"}
+{"latency_time":13664488500,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 22:33:26.013"}
+{"error":"dial tcp: lookup 123456: no such host","level":"info","msg":"注册失败,user[\u0026{Id:6909507138805039104 Username:root Password:admin Phone:13800000000 Type:0 CreateTime:2022-03-15 22:34:34.3265138 +0800 CST m=+11.435203001 IsDelete:0 Ext:{String: Valid:false}}]","time":"2022-03-15 22:34:38.887"}
+{"latency_time":13671053600,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 22:34:38.889"}
+{"level":"info","msg":"该用户已经注册过,phone[13800000000],type[0]","time":"2022-03-15 22:35:19.023"}
+{"latency_time":342966700,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/addUser","status_code":200,"time":"2022-03-15 22:35:19.024"}

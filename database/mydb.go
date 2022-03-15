@@ -21,11 +21,12 @@ func (db *Database) Init() {
 	}
 }
 
-func openDB(username, password, dbname string) *gorm.DB {
+func openDB(username, password, host, dbname string) *gorm.DB {
 	dsn := fmt.Sprintf(
-		"%s:%s@tcp(127.0.0.1:3306)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+		"%s:%s@tcp(%s:3306)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		username,
 		password,
+		host,
 		dbname,
 	)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
@@ -63,7 +64,7 @@ func GetDB() *gorm.DB {
 	return InitDB()
 }
 
-func readConfig() (string, string, string) {
+func readConfig() (string, string, string, string) {
 	config := viper.New()
 	config.AddConfigPath("./config") //设置读取的文件路径
 	config.SetConfigName("db")       //设置读取的文件名
@@ -77,7 +78,8 @@ func readConfig() (string, string, string) {
 	//文件读取出来的内容:
 	username := config.Get("mysql.username").(string)
 	password := config.Get("mysql.password").(string)
+	host := config.Get("mysql.host").(string)
 	dbname := config.Get("mysql.dbname").(string)
-	return username, password, dbname
+	return username, password, host, dbname
 
 }

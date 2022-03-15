@@ -14,7 +14,7 @@ import (
 var userDao database.UserImpl
 
 func TestDb(t *testing.T) {
-	dsn := "root:111111@tcp(127.0.0.1:3306)/mydb?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "jbc:123456@tcp(47.96.86.248:3306)/mydb?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println(err)
