@@ -83,3 +83,26 @@ time="2022-03-15T22:34:38+08:00" level=info msg="注册失败,user[&{Id:69095071
 time="2022-03-15T22:34:38+08:00" level=info latency_time=13.6710536s remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
 time="2022-03-15T22:35:19+08:00" level=info msg="该用户已经注册过,phone[13800000000],type[0]"
 time="2022-03-15T22:35:19+08:00" level=info latency_time=342.9667ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:36:02+08:00" level=info msg="该用户已经注册过,phone[13800000000],type[0]"
+time="2022-03-15T22:36:02+08:00" level=info latency_time=244.1371ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:36:17+08:00" level=info latency_time=459.4172ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:36:22+08:00" level=info latency_time=427.3126ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-15T22:36:24+08:00" level=info msg="该用户已经注册过,phone[13800000001],type[1]"
+time="2022-03-15T22:36:24+08:00" level=info latency_time=186.1221ms remote_ip="::1" req_method=POST req_uri=/addUser status_code=200
+time="2022-03-16T20:51:16+08:00" level=info latency_time="546.2µs" remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-03-16T20:52:01+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-16T20:52:01+08:00" level=info latency_time=249.6221ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-16T20:52:01+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/getAdminName status_code=204
+time="2022-03-16T20:52:01+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/getAllDocAndPatient status_code=404
+time="2022-03-16T20:52:01+08:00" level=info latency_time=0s remote_ip="::1" req_method=POST req_uri=/getAdminName status_code=404
+time="2022-03-16T20:52:26+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-03-16T20:52:26+08:00" level=info latency_time=205.4923ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-03-16T20:52:26+08:00" level=info latency_time=0s remote_ip="::1" req_method=GET req_uri=/getAllDocAndPatient status_code=404
+time="2022-03-16T20:52:26+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/getAdminName status_code=204
+time="2022-03-16T20:52:26+08:00" level=info latency_time=0s remote_ip="::1" req_method=POST req_uri=/getAdminName status_code=404
+time="2022-03-16T20:56:31+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/upload status_code=204
+time="2022-03-16T20:56:31+08:00" level=info latency_time=0s remote_ip="::1" req_method=POST req_uri=/user/upload status_code=404
+time="2022-03-16T20:58:01+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/upload status_code=204
+time="2022-03-16T20:58:02+08:00" level=info latency_time=3.3602ms remote_ip="::1" req_method=POST req_uri=/user/upload status_code=200
+time="2022-03-16T20:59:31+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/upload status_code=204
+time="2022-03-16T20:59:31+08:00" level=info latency_time=5.0773ms remote_ip="::1" req_method=POST req_uri=/user/upload status_code=200

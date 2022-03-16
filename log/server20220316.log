@@ -1,0 +1,17 @@
+{"latency_time":546200,"level":"info","msg":"","remote_ip":"::1","req_method":"GET","req_uri":"/","status_code":200,"time":"2022-03-16 20:51:16.522"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/checkUser","status_code":204,"time":"2022-03-16 20:52:01.156"}
+{"latency_time":249622100,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/checkUser","status_code":200,"time":"2022-03-16 20:52:01.407"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/getAdminName","status_code":204,"time":"2022-03-16 20:52:01.456"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"GET","req_uri":"/getAllDocAndPatient","status_code":404,"time":"2022-03-16 20:52:01.459"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/getAdminName","status_code":404,"time":"2022-03-16 20:52:01.459"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/checkUser","status_code":204,"time":"2022-03-16 20:52:26.246"}
+{"latency_time":205492300,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/checkUser","status_code":200,"time":"2022-03-16 20:52:26.453"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"GET","req_uri":"/getAllDocAndPatient","status_code":404,"time":"2022-03-16 20:52:26.492"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/getAdminName","status_code":204,"time":"2022-03-16 20:52:26.492"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/getAdminName","status_code":404,"time":"2022-03-16 20:52:26.493"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/user/upload","status_code":204,"time":"2022-03-16 20:56:31.236"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/user/upload","status_code":404,"time":"2022-03-16 20:56:31.238"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/user/upload","status_code":204,"time":"2022-03-16 20:58:01.991"}
+{"latency_time":3360200,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/user/upload","status_code":200,"time":"2022-03-16 20:58:02.015"}
+{"latency_time":0,"level":"info","msg":"","remote_ip":"::1","req_method":"OPTIONS","req_uri":"/user/upload","status_code":204,"time":"2022-03-16 20:59:31.835"}
+{"latency_time":5077300,"level":"info","msg":"","remote_ip":"::1","req_method":"POST","req_uri":"/user/upload","status_code":200,"time":"2022-03-16 20:59:31.843"}

@@ -17,5 +17,6 @@ func main() {
 	//用户注册
 	r.POST("/addUser", routers.Register)
 
+	r.POST("/user/upload", routers.Upload)
 	_ = r.Run(":8096")
 }
