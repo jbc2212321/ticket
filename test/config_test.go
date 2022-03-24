@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/spf13/viper"
 	"testing"
+	"ticket/util"
 )
 
 func TestConfig(t *testing.T) {
@@ -23,4 +24,9 @@ func TestConfig(t *testing.T) {
 	password := config.Get("mysql.password").(string)
 	//dbname:=config.Get("mysql.dbname").(string)
 	fmt.Println(username, password)
+}
+
+func TestGetConfig(t *testing.T) {
+	res := util.ReadConfig("../config", util.DBConfig, util.YAML, "mysql.dbname", "mysql.username")
+	fmt.Println(res)
 }

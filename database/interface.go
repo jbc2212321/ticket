@@ -5,3 +5,7 @@ type UserDao interface {
 	AddUser(user *User) error
 	CheckUser(phone, category int64, password string) bool
 }
+
+type VatDao interface {
+	AddVat(vat *VatInvoice) error
+}

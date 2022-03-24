@@ -67,8 +67,9 @@ func GetDB() *gorm.DB {
 func readConfig() (string, string, string, string) {
 	config := viper.New()
 	config.AddConfigPath("./config") //设置读取的文件路径
-	config.SetConfigName("db")       //设置读取的文件名
-	config.SetConfigType("yaml")     //设置文件的类型
+	//config.AddConfigPath("../config") //设置读取的文件路径 --test
+	config.SetConfigName("db")   //设置读取的文件名
+	config.SetConfigType("yaml") //设置文件的类型
 
 	//尝试进行配置读取
 	if err := config.ReadInConfig(); err != nil {

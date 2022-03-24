@@ -1,0 +1,6 @@
+package util
+
+const ConfigPath string = "./config"
+const DBConfig string = "db"
+const YAML string = "yaml"
+const AccessToken string = "24.c7906b238118d61128c56b219adc3567.2592000.1650544920.282335-25820164"
