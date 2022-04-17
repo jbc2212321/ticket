@@ -17,6 +17,10 @@ func main() {
 	//用户注册
 	r.POST("/addUser", routers.Register)
 
+	//上传小票
 	r.POST("/user/upload", routers.Upload)
+
+	//保存小票
+	r.POST("/user/saveTicket", routers.SaveTicket)
 	_ = r.Run(":8096")
 }
