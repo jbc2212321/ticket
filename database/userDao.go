@@ -48,7 +48,7 @@ func (u *UserImpl) AddUser(user *User) error {
 }
 
 //用户登录
-func (u *UserImpl) CheckUser(phone, category int64, password string) bool {
+func (u *UserImpl) CheckUser(phone, category int64, password string) int64 {
 	db := GetDB()
 	var user User
 	queryMap := make(map[string]string, 0)
@@ -59,8 +59,8 @@ func (u *UserImpl) CheckUser(phone, category int64, password string) bool {
 	err := db.Model(&User{}).Where(queryMap).First(&user).Error
 	if err != nil {
 		//err==gorm.ErrRecordNotFound
-		return false
+		return -1
 	}
 	fmt.Println(user)
-	return true
+	return user.Id
 }

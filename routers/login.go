@@ -25,12 +25,14 @@ func Login(c *gin.Context) {
 		return
 	}
 	// 判断用户名密码是否正确
-	if !userDao.CheckUser(util.TranToInt64(json.Phone), util.TranToInt64(json.Category), json.Password) {
+	userId := userDao.CheckUser(util.TranToInt64(json.Phone), util.TranToInt64(json.Category), json.Password)
+	if userId == -1 {
 		resp.Data = false
 		middleware.Log.Infof("手机号或者密码错误,phone:[%s],password:[%s]", json.Phone, json.Password)
 		return
 	}
 
 	resp.Data = true
+	resp.Message = util.TranToString(userId)
 	c.JSON(http.StatusOK, resp)
 }
