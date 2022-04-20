@@ -73,3 +73,14 @@ func TransToBase64() {
 	//base64.StdEncoding.Encode(dist, emptyBuff.Bytes()) //buff转成base64
 	//fmt.Println(string(dist))                          //输出图片base64(type = []byte)
 }
+
+func TestImageDb(t *testing.T) {
+	idList := []int64{6922547823636381696}
+	img, _ := imageDao.GetImageByTicketId(idList...)
+	for _, i2 := range img {
+		//fmt.Println(string(i2.OcrBinaryData))
+		fmt.Println(string(i2.BinaryData))
+		//image := base64.StdEncoding.EncodeToString(i2.BinaryData)
+		//fmt.Println(image)
+	}
+}

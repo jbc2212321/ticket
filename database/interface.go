@@ -12,4 +12,5 @@ type VatDao interface {
 
 type ImageDao interface {
 	AddImage(img *Image) error
+	GetImageByTicketId(idList ...int64) ([]*Image, error)
 }

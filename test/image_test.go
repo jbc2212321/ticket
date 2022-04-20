@@ -167,3 +167,13 @@ func TestInvoice(t *testing.T) {
 	fmt.Println(string(result))
 
 }
+
+func TestParseForm(t *testing.T) {
+	filebytes, err := ioutil.ReadFile("C:\\Users\\78240\\go\\ticket\\image\\vat_invoice.jpeg")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	image := base64.StdEncoding.EncodeToString(filebytes)
+	fmt.Println(image)
+}

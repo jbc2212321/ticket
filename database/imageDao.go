@@ -26,3 +26,13 @@ func (I *ImageImpl) AddImage(img *Image) error {
 	}
 	return nil
 }
+
+func (I *ImageImpl) GetImageByTicketId(idList ...int64) ([]*Image, error) {
+	db := GetDB()
+	images := new([]*Image)
+	err := db.Model(&Image{}).Where("ticket_id in ?", idList).Find(images).Error
+	if err != nil {
+		return nil, err
+	}
+	return *images, nil
+}
