@@ -65,3 +65,12 @@ func (v *VatImpl) GetVatByUserId(idList ...int64) ([]*VatInvoice, error) {
 	}
 	return *vats, nil
 }
+
+func (v *VatImpl) DelVatByTicketId(idList ...int64) error {
+	db := GetDB()
+	err := db.Model(&VatInvoice{}).Where("id = ?", idList).Delete(&VatInvoice{}).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

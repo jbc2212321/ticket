@@ -28,5 +28,8 @@ func main() {
 
 	//小票列表
 	r.POST("/user/listTicket", routers.ListTicketByUserId)
+
+	//删除小票
+	r.POST("/user/delTicket", routers.DelTicketByTicketId)
 	_ = r.Run(":8096")
 }

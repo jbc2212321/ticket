@@ -9,10 +9,12 @@ type UserDao interface {
 type VatDao interface {
 	AddVat(vat *VatInvoice) error
 	GetVatByUserId(idList ...int64) ([]*VatInvoice, error)
+	DelVatByTicketId(idList ...int64) error
 }
 
 type ImageDao interface {
 	AddImage(img *Image) error
 	GetImageByTicketId(idList ...int64) ([]*Image, error)
 	ListImages() ([]*Image, error)
+	DelImageByTicketId(idList ...int64) error
 }

@@ -46,3 +46,12 @@ func (I *ImageImpl) ListImages() ([]*Image, error) {
 	}
 	return *images, nil
 }
+
+func (I *ImageImpl) DelImageByTicketId(idList ...int64) error {
+	db := GetDB()
+	err := db.Model(&Image{}).Where("ticket_id = ?", idList).Delete(&Image{}).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

@@ -10,15 +10,15 @@ import (
 )
 
 type ShowTicketParam struct {
-	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段
-	//Username string `json:"username" binding:"required"`
-	//Password string `json:"password" binding:"required"`
-	//UserId     string              `json:"userId" binding:"required"`
 	TicketId string `json:"ticketId" binding:"required"`
 }
 
 type ListTicketByUserIdParam struct {
 	UserId string `json:"userId" binding:"required"`
+}
+
+type DelTicketByTicketIdParam struct {
+	TicketId string `json:"ticketId" binding:"required"`
 }
 
 //展示小票
@@ -107,5 +107,34 @@ func ListTicketByUserId(c *gin.Context) {
 	}
 	resp.Data = imageList
 	//fmt.Println(images[0].TicketId)
+	c.JSON(http.StatusOK, resp)
+}
+
+func DelTicketByTicketId(c *gin.Context) {
+	var json DelTicketByTicketIdParam
+	resp := util.GetResponse()
+
+	if err := c.ShouldBindJSON(&json); err != nil {
+		fmt.Println("解析失败！")
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		middleware.Log.Infof("json解析失败[%s]", c.Request)
+		resp.Status = util.JSONError
+		return
+	}
+
+	//删除小票
+	err := vatDao.DelVatByTicketId(util.TranToInt64(json.TicketId))
+	if err != nil {
+		resp.Status = util.DBError
+		return
+	}
+
+	err = imageDao.DelImageByTicketId(util.TranToInt64(json.TicketId))
+	if err != nil {
+		resp.Status = util.DBError
+		return
+	}
+	resp.Status = util.SUCCESS
+	resp.Message = "删除成功"
 	c.JSON(http.StatusOK, resp)
 }
