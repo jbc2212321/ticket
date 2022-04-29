@@ -75,8 +75,8 @@ func TransToBase64() {
 }
 
 func TestImageDb(t *testing.T) {
-	idList := []int64{6922547823636381696}
-	img, _ := imageDao.GetImageByTicketId(idList...)
+	//idList := []int64{6922547823636381696}
+	img, _ := imageDao.GetImageByTicketId(6922547823636381696)
 	for _, i2 := range img {
 		//fmt.Println(string(i2.OcrBinaryData))
 		fmt.Println(string(i2.BinaryData))

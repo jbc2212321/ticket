@@ -36,3 +36,13 @@ func (I *ImageImpl) GetImageByTicketId(idList ...int64) ([]*Image, error) {
 	}
 	return *images, nil
 }
+
+func (I *ImageImpl) ListImages() ([]*Image, error) {
+	db := GetDB()
+	images := new([]*Image)
+	err := db.Model(&Image{}).Find(images).Error
+	if err != nil {
+		return nil, err
+	}
+	return *images, nil
+}

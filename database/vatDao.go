@@ -55,3 +55,13 @@ func (v *VatImpl) AddVat(vat *VatInvoice) error {
 	}
 	return nil
 }
+
+func (v *VatImpl) GetVatByUserId(idList ...int64) ([]*VatInvoice, error) {
+	db := GetDB()
+	vats := new([]*VatInvoice)
+	err := db.Model(&VatInvoice{}).Where("user_id in ?", idList).Find(vats).Error
+	if err != nil {
+		return nil, err
+	}
+	return *vats, nil
+}

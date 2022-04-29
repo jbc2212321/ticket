@@ -22,5 +22,11 @@ func main() {
 
 	//保存小票
 	r.POST("/user/saveTicket", routers.SaveTicket)
+
+	//展示小票
+	r.POST("/user/showTicket", routers.ShowTicket)
+
+	//小票列表
+	r.POST("/user/listTicket", routers.ListTicketByUserId)
 	_ = r.Run(":8096")
 }
