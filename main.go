@@ -37,5 +37,13 @@ func main() {
 
 	//上传歌曲
 	r.POST("/user/song/upload", routers.UploadSong)
+	//版权查询
+	r.POST("/user/song/inquiry", routers.Inquiry)
+
+	r.POST("/user/song/inquiryByStatus", routers.InquiryByStatus)
+
+
+
+
 	_ = r.Run(":8096")
 }
