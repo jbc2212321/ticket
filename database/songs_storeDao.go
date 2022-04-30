@@ -12,3 +12,12 @@ func (m *SongsStore) TableName() string {
 
 type SongsStoreImpl struct {
 }
+
+func (m *SongsStoreImpl) AddSong(song *SongsStore) error {
+	db := GetDB()
+	err := db.Create(&song).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

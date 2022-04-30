@@ -16,6 +16,7 @@ import (
 )
 
 var songImpl database.SongsImpl
+var songsStoreImpl database.SongsStoreImpl
 
 type UploadParam struct {
 	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段
@@ -221,6 +222,16 @@ func UploadSong(c *gin.Context) {
 			return
 		}
 		resp.Data = song
+		//保存到songs store中
+		fileBytes, err := ioutil.ReadFile(simpleSongs + f.Filename)
+		if err != nil {
+			fmt.Println(err)
+		}
+		songStore := &database.SongsStore{
+			Store: fileBytes,
+			Id:    song.Id,
+		}
+		_ = songsStoreImpl.AddSong(songStore)
 	}
 	resp.Message = "上传文件成功"
 	c.JSON(http.StatusOK, resp)

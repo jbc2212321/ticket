@@ -1731,3 +1731,15 @@ time="2022-04-30T20:44:08+08:00" level=info latency_time="503.9µs" remote_ip=":
 time="2022-04-30T20:44:22+08:00" level=info latency_time=13.2332206s remote_ip="::1" req_method=POST req_uri=/user/song/upload status_code=200
 time="2022-04-30T20:45:33+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/song/upload status_code=204
 time="2022-04-30T20:46:37+08:00" level=info latency_time=1m3.9038028s remote_ip="::1" req_method=POST req_uri=/user/song/upload status_code=200
+time="2022-04-30T20:54:59+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/song/upload status_code=204
+time="2022-04-30T20:56:04+08:00" level=info latency_time=1m5.6910208s remote_ip="::1" req_method=POST req_uri=/user/song/upload status_code=200
+time="2022-04-30T20:59:44+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/song/upload status_code=204
+time="2022-04-30T21:00:03+08:00" level=info latency_time=19.1279591s remote_ip="::1" req_method=POST req_uri=/user/song/upload status_code=200
+time="2022-04-30T21:16:28+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/song/upload status_code=204
+time="2022-04-30T21:16:46+08:00" level=info latency_time=17.8289022s remote_ip="::1" req_method=POST req_uri=/user/song/upload status_code=200
+time="2022-04-30T21:18:39+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/song/upload status_code=204
+time="2022-04-30T21:19:45+08:00" level=info latency_time=1m6.9201113s remote_ip="::1" req_method=POST req_uri=/user/song/upload status_code=200
+time="2022-04-30T21:24:48+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/song/upload status_code=204
+time="2022-04-30T21:26:39+08:00" level=info latency_time=1m50.2625515s remote_ip="::1" req_method=POST req_uri=/user/song/upload status_code=200
+time="2022-04-30T21:31:38+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/queryUser status_code=204
+time="2022-04-30T21:31:38+08:00" level=info latency_time=21.7967ms remote_ip="::1" req_method=POST req_uri=/queryUser status_code=200

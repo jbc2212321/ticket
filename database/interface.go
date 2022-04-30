@@ -19,3 +19,7 @@ type ImageDao interface {
 	ListImages() ([]*Image, error)
 	DelImageByTicketId(idList ...int64) error
 }
+
+type SongsStoreDao interface {
+	AddSong(song *SongsStore) error
+}

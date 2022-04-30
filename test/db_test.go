@@ -84,3 +84,16 @@ func TestImageDb(t *testing.T) {
 		//fmt.Println(image)
 	}
 }
+
+func TestFileSong(t *testing.T) {
+	var store database.SongsStoreImpl
+	fileBytes, err := ioutil.ReadFile("C:\\Users\\78240\\Desktop\\发票\\")
+	if err != nil {
+		fmt.Println(err)
+	}
+	songStore := &database.SongsStore{
+		Store: fileBytes,
+		Id:    1,
+	}
+	_ = store.AddSong(songStore)
+}
