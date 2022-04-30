@@ -27,3 +27,14 @@ type SongsStoreDao interface {
 type VerifyListDao interface {
 	AddVerifyList(verify *Verifylist) error
 }
+
+type TrainDao interface {
+	AddTrain(train *Train) error
+	GetTrainByUserId(idList ...int64) ([]*Train, error)
+	DelTrainByTicketId(idList ...int64) error
+}
+
+type LogDao interface {
+	AddLog(log *Log) error
+	//GetTrainByUserId(idList ...int64) ([]*Train, error)
+}

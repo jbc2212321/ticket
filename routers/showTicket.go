@@ -74,9 +74,19 @@ func ListTicketByUserId(c *gin.Context) {
 		resp.Status = util.DBError
 		return
 	}
-	ticketIds := make([]int64, len(vats))
+
+	trains, err := trainDao.GetTrainByUserId(util.TranToInt64(json.UserId))
+	if err != nil {
+		resp.Status = util.DBError
+		return
+	}
+
+	ticketIds := make([]int64, len(vats)+len(trains))
 
 	for _, i := range vats {
+		ticketIds = append(ticketIds, i.Id)
+	}
+	for _, i := range trains {
 		ticketIds = append(ticketIds, i.Id)
 	}
 
@@ -102,6 +112,8 @@ func ListTicketByUserId(c *gin.Context) {
 		}
 		if v.Type == 0 {
 			image.Category = "增值税发票"
+		} else {
+			image.Category = "火车票"
 		}
 		imageList = append(imageList, image)
 	}

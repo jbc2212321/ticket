@@ -26,5 +26,33 @@ func (t *Train) TableName() string {
 	return "train"
 }
 
-type trainImpl struct {
+type TrainImpl struct {
+}
+
+func (t *TrainImpl) AddTrain(train *Train) error {
+	db := GetDB()
+	err := db.Create(&train).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (t *TrainImpl) GetTrainByUserId(idList ...int64) ([]*Train, error) {
+	db := GetDB()
+	trains := new([]*Train)
+	err := db.Model(&Train{}).Where("user_id in ?", idList).Find(trains).Error
+	if err != nil {
+		return nil, err
+	}
+	return *trains, nil
+}
+
+func (t *TrainImpl) DelTrainByTicketId(idList ...int64) error {
+	db := GetDB()
+	err := db.Model(&Train{}).Where("id = ?", idList).Delete(&Train{}).Error
+	if err != nil {
+		return err
+	}
+	return nil
 }

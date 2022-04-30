@@ -35,10 +35,15 @@ func main() {
 	//删除小票
 	r.POST("/user/delTicket", routers.DelTicketByTicketId)
 
+	//保存火车票
+	r.POST("/user/train/saveTrain", routers.SaveTrain)
+
+	//------lyz-------//
 	//上传歌曲
 	r.POST("/user/song/upload", routers.UploadSong)
 
 	//申请版权
 	r.POST("/user/song/applyCopyright", routers.ApplyCopyright)
+
 	_ = r.Run(":8096")
 }

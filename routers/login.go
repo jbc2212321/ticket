@@ -3,9 +3,12 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"ticket/database"
 	"ticket/middleware"
 	"ticket/util"
 )
+
+var logDao database.LogImpl
 
 type LoginParam struct {
 	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段
@@ -32,6 +35,7 @@ func Login(c *gin.Context) {
 		return
 	}
 
+	//logDao.AddLog()
 	resp.Data = true
 	resp.Message = util.TranToString(userId)
 	c.JSON(http.StatusOK, resp)
