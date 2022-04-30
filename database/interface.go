@@ -26,6 +26,7 @@ type SongsStoreDao interface {
 
 type VerifyListDao interface {
 	AddVerifyList(verify *Verifylist) error
+	getVerifyByID(idList ...int64) ([]*Verifylist, error)
 }
 
 type TrainDao interface {

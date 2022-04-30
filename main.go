@@ -41,6 +41,10 @@ func main() {
 	//------lyz-------//
 	//上传歌曲
 	r.POST("/user/song/upload", routers.UploadSong)
+	//版权查询
+	r.POST("/user/song/inquiry", routers.Inquiry)
+
+	r.POST("/user/song/inquiryByStatus", routers.InquiryByStatus)
 
 	//申请版权
 	r.POST("/user/song/applyCopyright", routers.ApplyCopyright)

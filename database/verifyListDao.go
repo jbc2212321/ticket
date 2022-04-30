@@ -1,5 +1,7 @@
 package database
 
+import "fmt"
+
 type Verifylist struct {
 	ListId   int    `gorm:"column:list_id" db:"list_id" json:"list_id" form:"list_id"`     //审核列表 id
 	Songid   int    `gorm:"column:songid" db:"songid" json:"songid" form:"songid"`         //歌曲id
@@ -16,11 +18,32 @@ func (m *Verifylist) TableName() string {
 type VerifylistImpl struct {
 }
 
-func (v *VerifylistImpl) AddVerifyList(verify *Verifylist) error {
+//func (u *UserImpl) AddUser(user *User) error {
+//	db := GetDB()
+//	err := db.Create(&user).Error
+//	if err != nil {
+//		return err
+//	}
+//	return nil
+//}
+
+func (*VerifylistImpl) GetVerifyByID(idList ...int64) ([]*Verifylist, error) {
 	db := GetDB()
-	err := db.Create(&verify).Error
+	veris := new([]*Verifylist)
+	err := db.Model(&Verifylist{}).Where("userid = ?", idList).Find(veris).Error
 	if err != nil {
-		return err
+		return nil, err
 	}
-	return nil
+	return *veris, nil
+}
+
+func (*VerifylistImpl) GetVerifyByStatus(statuList ...int64) ([]*Verifylist, error) {
+	db := GetDB()
+	veris := new([]*Verifylist)
+	fmt.Println("statuList:", statuList)
+	err := db.Model(&Verifylist{}).Where("status = ?", statuList).Find(veris).Error
+	if err != nil {
+		return nil, err
+	}
+	return *veris, nil
 }
