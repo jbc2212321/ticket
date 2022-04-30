@@ -4,12 +4,11 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"ticket/database"
 	"ticket/middleware"
 	"ticket/util"
 )
 
-var verifyListDao database.VerifylistImpl
+//var verifyListDao database.VerifylistImpl
 
 type InquiryParam struct {
 	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段

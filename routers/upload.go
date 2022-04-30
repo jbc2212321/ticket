@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"net/url"
 	"os/exec"
+	"strconv"
 	"strings"
 	"ticket/database"
 	"ticket/middleware"
@@ -256,4 +257,50 @@ func RpcJava(choice string) bool {
 		return true
 	}
 	return false
+}
+
+var verifyListDao database.VerifylistImpl
+
+type ApplyCopyrightParam struct {
+	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段
+	UserId   string `json:"userId" binding:"required"`
+	UserName string `json:"username" binding:"required"`
+	SongId   string `json:"songid" binding:"required"`
+	SongName string `json:"songname" binding:"required"`
+}
+
+func ApplyCopyright(c *gin.Context) {
+	var json ApplyCopyrightParam
+	resp := util.GetResponse()
+
+	if err := c.ShouldBindJSON(&json); err != nil {
+		fmt.Println("解析失败！")
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		middleware.Log.Infof("json解析失败[%s]", c.Request)
+
+		//bodyBytes, _ := ioutil.ReadAll(c.Request.Body)
+		//fmt.Println(string(bodyBytes))
+		resp.Status = util.JSONError
+		return
+	}
+
+	songId, _ := strconv.Atoi(json.SongId)
+	verify := &database.Verifylist{
+		Songid:   songId,
+		Songname: json.SongName,
+		Userid:   util.TranToInt64(json.UserId),
+		Username: json.UserName,
+		Status:   0,
+	}
+	//fmt.Println("verify:",verify)
+	err := verifyListDao.AddVerifyList(verify)
+	//fmt.Println("err:",err)
+	if err != nil {
+		resp.Code = util.DBError
+		return
+	}
+
+	resp.Code = util.SUCCESS
+	resp.Message = "保存成功"
+	c.JSON(http.StatusOK, resp)
 }
