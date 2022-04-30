@@ -8,11 +8,14 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"os/exec"
 	"strings"
 	"ticket/database"
 	"ticket/middleware"
 	"ticket/util"
 )
+
+var songImpl database.SongsImpl
 
 type UploadParam struct {
 	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段
@@ -164,4 +167,82 @@ func TranToVatDao(v *util.VatInvoice) *database.VatInvoice {
 	vat.Checker = v.WordsResult.Checker
 	vat.NoteDrawer = v.WordsResult.NoteDrawer
 	return vat
+}
+
+type UploadSongParam struct {
+	// binding:"required"修饰的字段，若接收为空值，则报错，是必须字段
+	//Username string `json:"username" binding:"required"`
+	//Password string `json:"password" binding:"required"`
+	UserId     string              `json:"userId" binding:"required"`
+	ImageName  string              `json:"imageName" binding:"required"`
+	TicketImg  string              `json:"ticketImg" binding:"required"`
+	VatInvoice database.VatInvoice `json:"vatInvoice" binding:"required"`
+}
+
+func UploadSong(c *gin.Context) {
+	resp := util.GetResponse()
+	f, err := c.FormFile("file")
+	if err != nil {
+		resp.Message = "接收文件失败"
+		resp.Code = util.IOError
+		c.JSON(http.StatusOK, resp)
+		return
+	}
+
+	//清空
+	ociCat := util.SongPath + util.OciCat
+	simpleSongs := util.SongPath + util.SimpleSongs
+	util.DelFileByDst(ociCat)
+	util.DelFileByDst(simpleSongs)
+
+	//将读取到的文件保存到本地(服务端)
+	dst := fmt.Sprintf("song/%s", f.Filename)
+	fmt.Println("dst:", dst)
+	if err := c.SaveUploadedFile(f, dst); err != nil {
+		resp.Message = "保存文件失败"
+		resp.Code = util.IOError
+		c.JSON(http.StatusOK, resp)
+		return
+	}
+	//备份
+
+	_ = c.SaveUploadedFile(f, simpleSongs+f.Filename)
+
+	_ = c.SaveUploadedFile(f, ociCat+f.Filename)
+
+	if RpcJava("s") {
+		//yes
+		resp.Code = util.Repeat
+	} else {
+		RpcJava("i")
+		song, err := songImpl.GetSong()
+		if err != nil {
+			resp.Status = util.DBError
+			return
+		}
+		resp.Data = song
+	}
+	resp.Message = "上传文件成功"
+	c.JSON(http.StatusOK, resp)
+}
+
+func RpcJava(choice string) bool {
+	params := []string{"-jar", "ocicat-afpj-master.jar", "-p", "afpj.properties"}
+	//params2 := []string{"-jar", "ocicat-afpj-master.jar", "-p", "afpj.properties", "i"}
+	params = append(params, choice)
+	cmd := exec.Command("java", params...)
+	cmd.Dir = util.SongPath
+	out, err := cmd.CombinedOutput()
+	if err != nil {
+		fmt.Println("error:", err.Error())
+	}
+
+	garbledStr := util.ConvertByte2String(out, util.GB18030)
+	fmt.Println("-----------------")
+	fmt.Println(garbledStr)
+
+	if strings.Contains(garbledStr, "命中次数hit: 20001") {
+		return true
+	}
+	return false
 }

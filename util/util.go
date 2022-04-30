@@ -4,7 +4,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/spf13/viper"
+	"golang.org/x/text/encoding/simplifiedchinese"
+	"io/ioutil"
 	"net/http"
+	"os"
+	"path"
 	"strconv"
 )
 
@@ -55,4 +59,34 @@ func ReadConfig(configPath, configName, configType string, key ...string) []stri
 	}
 	return res
 
+}
+
+type Charset string
+
+const (
+	UTF8    = Charset("UTF-8")
+	GB18030 = Charset("GB18030")
+)
+
+//解决中文乱码
+func ConvertByte2String(byte []byte, charset Charset) string {
+	var str string
+	switch charset {
+	case GB18030:
+		var decodeBytes, _ = simplifiedchinese.GB18030.NewDecoder().Bytes(byte)
+		str = string(decodeBytes)
+	case UTF8:
+		fallthrough
+	default:
+		str = string(byte)
+	}
+	return str
+}
+
+//删除文件
+func DelFileByDst(dst string) {
+	dir, _ := ioutil.ReadDir(dst)
+	for _, d := range dir {
+		_ = os.RemoveAll(path.Join([]string{dst, d.Name()}...))
+	}
 }

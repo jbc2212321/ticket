@@ -17,6 +17,9 @@ func main() {
 	//用户注册
 	r.POST("/addUser", routers.Register)
 
+	//查询用户
+	r.POST("/queryUser", routers.UserInfo)
+
 	//上传小票
 	r.POST("/user/upload", routers.Upload)
 
@@ -31,5 +34,8 @@ func main() {
 
 	//删除小票
 	r.POST("/user/delTicket", routers.DelTicketByTicketId)
+
+	//上传歌曲
+	r.POST("/user/song/upload", routers.UploadSong)
 	_ = r.Run(":8096")
 }

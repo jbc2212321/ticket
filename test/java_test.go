@@ -17,7 +17,8 @@ const (
 
 func TestJava(t *testing.T) {
 
-	params := []string{"-jar", "ocicat-afpj-master.jar", "-p", "afpj.properties", "i"}
+	params := []string{"-jar", "ocicat-afpj-master.jar", "-p", "afpj.properties", "s"}
+	//params2 := []string{"-jar", "ocicat-afpj-master.jar", "-p", "afpj.properties", "i"}
 	cmd := exec.Command("java", params...)
 	cmd.Dir = "D:\\78240749\\ocicat\\"
 	out, err := cmd.CombinedOutput()
@@ -29,7 +30,7 @@ func TestJava(t *testing.T) {
 	fmt.Println("-----------------")
 	fmt.Println(garbledStr)
 
-	if strings.Contains(garbledStr, "已经存在于数据库中") {
+	if strings.Contains(garbledStr, "命中次数hit: 20001") {
 		fmt.Println("YES")
 	}
 

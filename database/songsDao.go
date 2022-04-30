@@ -12,3 +12,14 @@ func (m *Songs) TableName() string {
 
 type SongsImpl struct {
 }
+
+//歌曲信息
+func (s *SongsImpl) GetSong() (*Songs, error) {
+	db := GetDB()
+	song := new(*Songs)
+	err := db.Model(&Songs{}).Last(song).Error
+	if err != nil {
+		return nil, err
+	}
+	return *song, nil
+}

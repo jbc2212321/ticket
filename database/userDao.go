@@ -64,3 +64,14 @@ func (u *UserImpl) CheckUser(phone, category int64, password string) int64 {
 	fmt.Println(user)
 	return user.Id
 }
+
+//用户信息
+func (u *UserImpl) GetUserById(idList ...int64) ([]*User, error) {
+	db := GetDB()
+	users := new([]*User)
+	err := db.Model(&User{}).Where("id in ?", idList).Find(users).Error
+	if err != nil {
+		return nil, err
+	}
+	return *users, nil
+}
