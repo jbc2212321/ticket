@@ -1495,3 +1495,8 @@
 [GIN] 2022/04/29 - 22:33:22 | 200 |      6.9737ms |             ::1 | POST     "/user/listTicket"
 [GIN] 2022/04/29 - 22:33:25 | 204 |       417.2µs |             ::1 | OPTIONS  "/user/listTicket"
 [GIN] 2022/04/29 - 22:33:25 | 200 |       8.228ms |             ::1 | POST     "/user/listTicket"
+[GIN] 2022/04/30 - 00:51:15 | 200 |     11.2216ms |             ::1 | GET      "/"
+[GIN] 2022/04/30 - 00:51:19 | 204 |            0s |             ::1 | OPTIONS  "/checkUser"
+[GIN] 2022/04/30 - 00:51:19 | 200 |     34.8931ms |             ::1 | POST     "/checkUser"
+[GIN] 2022/04/30 - 00:51:19 | 204 |      1.4602ms |             ::1 | OPTIONS  "/getDoctorName"
+[GIN] 2022/04/30 - 00:51:19 | 404 |       417.2µs |             ::1 | POST     "/getDoctorName"

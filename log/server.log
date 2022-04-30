@@ -1540,3 +1540,8 @@ time="2022-04-29T22:33:22+08:00" level=info latency_time=32.3355ms remote_ip="::
 time="2022-04-29T22:33:22+08:00" level=info latency_time=6.9737ms remote_ip="::1" req_method=POST req_uri=/user/listTicket status_code=200
 time="2022-04-29T22:33:25+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/user/listTicket status_code=204
 time="2022-04-29T22:33:25+08:00" level=info latency_time=7.6632ms remote_ip="::1" req_method=POST req_uri=/user/listTicket status_code=200
+time="2022-04-30T00:51:15+08:00" level=info latency_time=1.0573ms remote_ip="::1" req_method=GET req_uri=/ status_code=200
+time="2022-04-30T00:51:19+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/checkUser status_code=204
+time="2022-04-30T00:51:19+08:00" level=info latency_time=34.3316ms remote_ip="::1" req_method=POST req_uri=/checkUser status_code=200
+time="2022-04-30T00:51:19+08:00" level=info latency_time=0s remote_ip="::1" req_method=OPTIONS req_uri=/getDoctorName status_code=204
+time="2022-04-30T00:51:19+08:00" level=info latency_time=0s remote_ip="::1" req_method=POST req_uri=/getDoctorName status_code=404

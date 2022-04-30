@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"golang.org/x/text/encoding/simplifiedchinese"
 	"os/exec"
+	"strings"
 	"testing"
 )
 
@@ -27,6 +28,12 @@ func TestJava(t *testing.T) {
 	garbledStr := ConvertByte2String(out, GB18030)
 	fmt.Println("-----------------")
 	fmt.Println(garbledStr)
+
+	if strings.Contains(garbledStr, "已经存在于数据库中") {
+		fmt.Println("YES")
+	}
+
+	//清空文件夹
 	//stdout, err := cmd.CombinedOutput()
 	//if err != nil {
 	//	fmt.Println(err)
