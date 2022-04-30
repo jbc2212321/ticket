@@ -23,3 +23,7 @@ type ImageDao interface {
 type SongsStoreDao interface {
 	AddSong(song *SongsStore) error
 }
+
+type VerifyListDao interface {
+	AddVerifyList(verify *Verifylist) error
+}

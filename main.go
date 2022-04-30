@@ -37,5 +37,8 @@ func main() {
 
 	//上传歌曲
 	r.POST("/user/song/upload", routers.UploadSong)
+
+	//申请版权
+	r.POST("/user/song/applyCopyright", routers.ApplyCopyright)
 	_ = r.Run(":8096")
 }

@@ -16,11 +16,11 @@ func (m *Verifylist) TableName() string {
 type VerifylistImpl struct {
 }
 
-//func (u *UserImpl) AddUser(user *User) error {
-//	db := GetDB()
-//	err := db.Create(&user).Error
-//	if err != nil {
-//		return err
-//	}
-//	return nil
-//}
+func (v *VerifylistImpl) AddVerifyList(verify *Verifylist) error {
+	db := GetDB()
+	err := db.Create(&verify).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

@@ -87,7 +87,7 @@ func TestImageDb(t *testing.T) {
 
 func TestFileSong(t *testing.T) {
 	var store database.SongsStoreImpl
-	fileBytes, err := ioutil.ReadFile("C:\\Users\\78240\\Desktop\\发票\\")
+	fileBytes, err := ioutil.ReadFile("C:\\Users\\78240\\Desktop\\发票\\André-Rieu-Prelude-–-Act-I-_Carmen_.wav")
 	if err != nil {
 		fmt.Println(err)
 	}
