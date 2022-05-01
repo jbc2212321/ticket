@@ -68,6 +68,8 @@ func SaveTrain(c *gin.Context) {
 		return
 	}
 
+	_ = logDao.AddLog(GetLog(util.TranToInt64(json.UserId), "保存车票"))
+
 	resp.Code = util.SUCCESS
 	resp.Message = "上传文件成功"
 	c.JSON(http.StatusOK, resp)
