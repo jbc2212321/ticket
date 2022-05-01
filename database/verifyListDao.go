@@ -27,7 +27,7 @@ type VerifylistImpl struct {
 //	return nil
 //}
 
-func (*VerifylistImpl) GetVerifyByID(idList ...int64) ([]*Verifylist, error) {
+func (*VerifylistImpl) GetVerifyListByID(idList ...int64) ([]*Verifylist, error) {
 	db := GetDB()
 	veris := new([]*Verifylist)
 	err := db.Model(&Verifylist{}).Where("userid = ?", idList).Find(veris).Error

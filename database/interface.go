@@ -39,3 +39,8 @@ type LogDao interface {
 	AddLog(log *Log) error
 	//GetTrainByUserId(idList ...int64) ([]*Train, error)
 }
+
+type TradeListDao interface {
+	GetVerifyList() ([]*Tradelist, error)
+	DelTradeListById(idList ...int64) error
+}
