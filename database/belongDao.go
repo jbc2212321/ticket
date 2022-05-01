@@ -14,3 +14,22 @@ func (m *Belong) TableName() string {
 
 type BelongImpl struct {
 }
+
+func (I *BelongImpl) AddBelong(belong *Belong) error {
+	db := GetDB()
+	err := db.Create(&belong).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+func (I *BelongImpl) ChangeBelongBySongID(idList int64, userName string, userId int64) error {
+	db := GetDB()
+	//	err := db.Create(&Belong).Error
+	err := db.Model(&Belong{}).Where("songid = ?", idList).Updates(Belong{Username: userName, Userid: userId}).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
