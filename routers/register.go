@@ -57,6 +57,9 @@ func Register(c *gin.Context) {
 		middleware.Log.WithError(err).Infof("注册失败,user[%+v]", user)
 		return
 	}
+
+	_ = logDao.AddLog(GetLog(user.Id, "注册"))
+
 	resp.Message = "注册成功"
 	c.JSON(http.StatusOK, resp)
 }

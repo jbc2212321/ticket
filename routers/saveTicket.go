@@ -77,6 +77,9 @@ func SaveTicket(c *gin.Context) {
 		resp.Status = util.DBError
 		return
 	}
+
+	_ = logDao.AddLog(GetLog(util.TranToInt64(json.UserId), "保存发票"))
+
 	resp.Status = util.SUCCESS
 	resp.Message = "保存成功"
 	c.JSON(http.StatusOK, resp)

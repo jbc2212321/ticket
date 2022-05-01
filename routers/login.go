@@ -35,7 +35,8 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	//logDao.AddLog()
+	_ = logDao.AddLog(GetLog(userId, "登录"))
+
 	resp.Data = true
 	resp.Message = util.TranToString(userId)
 	c.JSON(http.StatusOK, resp)

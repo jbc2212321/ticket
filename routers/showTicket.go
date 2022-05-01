@@ -10,6 +10,7 @@ import (
 )
 
 type ShowTicketParam struct {
+	UserId   string `json:"userId" binding:"required"`
 	TicketId string `json:"ticketId" binding:"required"`
 }
 
@@ -18,6 +19,7 @@ type ListTicketByUserIdParam struct {
 }
 
 type DelTicketByTicketIdParam struct {
+	UserId   string `json:"userId" binding:"required"`
 	TicketId string `json:"ticketId" binding:"required"`
 }
 
@@ -52,6 +54,8 @@ func ShowTicket(c *gin.Context) {
 	}
 	resp.Data = img
 	//fmt.Println(string(images[0].BinaryData))
+	_ = logDao.AddLog(GetLog(util.TranToInt64(json.UserId), "展示小票"))
+
 	c.JSON(http.StatusOK, resp)
 }
 
@@ -119,6 +123,8 @@ func ListTicketByUserId(c *gin.Context) {
 	}
 	resp.Data = imageList
 	//fmt.Println(images[0].TicketId)
+	_ = logDao.AddLog(GetLog(util.TranToInt64(json.UserId), "查看小票"))
+
 	c.JSON(http.StatusOK, resp)
 }
 
@@ -146,6 +152,15 @@ func DelTicketByTicketId(c *gin.Context) {
 		resp.Status = util.DBError
 		return
 	}
+
+	err = trainDao.DelTrainByTicketId(util.TranToInt64(json.TicketId))
+	if err != nil {
+		resp.Status = util.DBError
+		return
+	}
+
+	_ = logDao.AddLog(GetLog(util.TranToInt64(json.UserId), "删除小票"))
+
 	resp.Status = util.SUCCESS
 	resp.Message = "删除成功"
 	c.JSON(http.StatusOK, resp)
