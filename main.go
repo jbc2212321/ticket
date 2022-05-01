@@ -62,10 +62,14 @@ func main() {
 	r.POST("/user/song/tradeList", routers.GetTradeList)
 	//
 	r.POST("/user/song/buy", routers.Buy)
+	r.POST("/user/song/buyDel", routers.BuyDel)
 	//申请版权
 	r.POST("/user/song/applyCopyright", routers.ApplyCopyright)
 
 	//更新
 	r.POST("/user/song/updateVerifyList", routers.UpdateVerifyList)
+
+	//提交交易
+	r.POST("/user/song/addTradeList", routers.AddTradeList)
 	_ = r.Run(":8096")
 }
