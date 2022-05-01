@@ -47,3 +47,12 @@ func (*VerifylistImpl) GetVerifyByStatus(statuList ...int64) ([]*Verifylist, err
 	}
 	return *veris, nil
 }
+
+func (*VerifylistImpl) UpdateVerifyListById(id, status int) error {
+	db := GetDB()
+	err := db.Model(&Verifylist{}).Where("list_id = ?", id).Update("status", status).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

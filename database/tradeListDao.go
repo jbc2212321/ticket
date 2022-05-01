@@ -37,3 +37,12 @@ func (*TradelistImpl) DelTradeListById(idList ...int64) error {
 	}
 	return nil
 }
+
+func (t *TradelistImpl) AddTradeList(tradelist *Tradelist) error {
+	db := GetDB()
+	err := db.Create(&tradelist).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

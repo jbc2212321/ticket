@@ -65,5 +65,7 @@ func main() {
 	//申请版权
 	r.POST("/user/song/applyCopyright", routers.ApplyCopyright)
 
+	//更新
+	r.POST("/user/song/updateVerifyList", routers.UpdateVerifyList)
 	_ = r.Run(":8096")
 }

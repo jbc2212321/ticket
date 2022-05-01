@@ -104,3 +104,9 @@ func DelFileByDst(dst string) {
 //	}
 //	return log
 //}
+
+//string 转int
+func TranToInt(s string) int {
+	i, _ := strconv.Atoi(s)
+	return i
+}
