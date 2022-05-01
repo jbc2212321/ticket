@@ -25,3 +25,22 @@ func (l *LogImpl) AddLog(log *Log) error {
 	}
 	return nil
 }
+
+func (l *LogImpl) ListLog() ([]*Log, error) {
+	db := GetDB()
+	logs := new([]*Log)
+	err := db.Model(&Log{}).Find(logs).Error
+	if err != nil {
+		return nil, err
+	}
+	return *logs, nil
+}
+
+func (l *LogImpl) DelLogById(idList ...int64) error {
+	db := GetDB()
+	err := db.Model(&Log{}).Where("id = ?", idList).Delete(&Log{}).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

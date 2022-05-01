@@ -75,3 +75,29 @@ func (u *UserImpl) GetUserById(idList ...int64) ([]*User, error) {
 	}
 	return *users, nil
 }
+
+//用户列表
+func (u *UserImpl) ListUser() ([]*User, error) {
+	db := GetDB()
+	users := new([]*User)
+
+	queryMap := make(map[string]string, 0)
+	queryMap["type"] = string(0)
+	queryMap["is_delete"] = "0"
+
+	err := db.Model(&User{}).Where(queryMap).Find(users).Error
+	if err != nil {
+		return nil, err
+	}
+	return *users, nil
+}
+
+//删除用户
+func (u *UserImpl) DelUserById(idList ...int64) error {
+	db := GetDB()
+	err := db.Model(&User{}).Where("id = ?", idList).Delete(&User{}).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}

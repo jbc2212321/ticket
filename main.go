@@ -20,6 +20,12 @@ func main() {
 	//查询用户
 	r.POST("/queryUser", routers.UserInfo)
 
+	//用户列表
+	r.POST("/listUser", routers.ListUser)
+
+	//删除用户
+	r.POST("/delUser", routers.DelUser)
+
 	//上传小票
 	r.POST("/user/upload", routers.Upload)
 
@@ -37,6 +43,12 @@ func main() {
 
 	//保存火车票
 	r.POST("/user/train/saveTrain", routers.SaveTrain)
+
+	//日志列表
+	r.POST("/admin/log/listLog", routers.ListLog)
+
+	//删除日志
+	r.POST("/admin/log/delLog", routers.DelLog)
 
 	//------lyz-------//
 	//上传歌曲
