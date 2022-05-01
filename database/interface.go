@@ -43,3 +43,8 @@ type LogDao interface {
 	ListLog() ([]*Log, error)
 	DelLogById(idList ...int64) error
 }
+
+type TradeListDao interface {
+	GetVerifyList() ([]*Tradelist, error)
+	DelTradeListById(idList ...int64) error
+}

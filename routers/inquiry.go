@@ -41,7 +41,7 @@ func Inquiry(c *gin.Context) {
 
 	resp.Status = util.SUCCESS
 	resp.Message = "读取成功"
-	verifyList, _ := verifyListDao.GetVerifyByID(util.TranToInt64(json.UserId))
+	verifyList, _ := verifyListDao.GetVerifyListByID(util.TranToInt64(json.UserId))
 	resp.Data = verifyList
 
 	c.JSON(http.StatusOK, resp)

@@ -17,3 +17,23 @@ func (m *Tradelist) TableName() string {
 
 type TradelistImpl struct {
 }
+
+func (*TradelistImpl) GetTradeList() ([]*Tradelist, error) {
+	db := GetDB()
+	tradelist := new([]*Tradelist)
+	//fmt.Println("statuList:", statuList)
+	err := db.Model(&Tradelist{}).Where("1=1").Find(tradelist).Error
+	if err != nil {
+		return nil, err
+	}
+	return *tradelist, nil
+}
+
+func (*TradelistImpl) DelTradeListById(idList ...int64) error {
+	db := GetDB()
+	err := db.Model(&Tradelist{}).Where("id = ?", idList).Delete(&Tradelist{}).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
