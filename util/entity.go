@@ -1,5 +1,7 @@
 package util
 
+import "time"
+
 type Response struct {
 	Status  int         `json:"status"`
 	Code    int         `json:"code"`
@@ -78,4 +80,22 @@ type WordsResult struct {
 	CommodityName        []CommodityName    `json:"CommodityName"`
 	SellerName           string             `json:"SellerName"`
 	InvoiceNum           string             `json:"InvoiceNum"`
+}
+
+//日志
+type LogManagement struct {
+	Num      string    `json:"num"`
+	Id       string    `json:"id"`
+	Action   string    `json:"action"`
+	Account  string    `json:"account"`
+	Time     time.Time `json:"time"`
+	UserName string    `json:"username"`
+	Phone    string    `json:"phone"`
+}
+
+type UserInfo struct {
+	Num  string    `json:"num"`
+	Time time.Time `json:"time"`
+	Name string    `json:"name"`
+	Tel  string    `json:"tel"`
 }

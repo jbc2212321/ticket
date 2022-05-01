@@ -17,8 +17,6 @@ type RegisterParam struct {
 	Category string `json:"value" binding:"required"`
 }
 
-var userDao database.UserImpl
-
 //新用户注册
 func Register(c *gin.Context) {
 	var json RegisterParam

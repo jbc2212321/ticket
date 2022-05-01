@@ -5,6 +5,8 @@ type UserDao interface {
 	AddUser(user *User) error
 	CheckUser(phone, category int64, password string) int64
 	GetUserById(idList ...int64) ([]*User, error)
+	ListUser() ([]*User, error)
+	DelUserById(idList ...int64) error
 }
 
 type VatDao interface {
@@ -38,5 +40,6 @@ type TrainDao interface {
 
 type LogDao interface {
 	AddLog(log *Log) error
-	//GetTrainByUserId(idList ...int64) ([]*Train, error)
+	ListLog() ([]*Log, error)
+	DelLogById(idList ...int64) error
 }
