@@ -47,7 +47,7 @@ func main() {
 	r.POST("/user/song/inquiryByStatus", routers.InquiryByStatus)
 
 	//查看交易列表
-	r.GET("/user/song/tradeList", routers.GetTradeList)
+	r.POST("/user/song/tradeList", routers.GetTradeList)
 	//
 	r.POST("/user/song/buy", routers.Buy)
 	//申请版权

@@ -31,7 +31,7 @@ func (*TradelistImpl) GetTradeList() ([]*Tradelist, error) {
 
 func (*TradelistImpl) DelTradeListById(idList ...int64) error {
 	db := GetDB()
-	err := db.Model(&Tradelist{}).Where("id = ?", idList).Delete(&Tradelist{}).Error
+	err := db.Model(&Tradelist{}).Where("num = ?", idList).Delete(&Tradelist{}).Error
 	if err != nil {
 		return err
 	}

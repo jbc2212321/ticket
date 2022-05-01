@@ -28,6 +28,7 @@ type VerifyListDao interface {
 	GetVerifyByID(idList ...int64) ([]*Verifylist, error)
 	GetVerifyByStatus(statuList ...int64) ([]*Verifylist, error)
 	AddVerifyList(verify *Verifylist) error
+	ChangeVerifyListBySongID(idList int64, userName string, userId int64) error
 }
 
 type TrainDao interface {
@@ -44,4 +45,14 @@ type LogDao interface {
 type TradeListDao interface {
 	GetVerifyList() ([]*Tradelist, error)
 	DelTradeListById(idList ...int64) error
+}
+
+type BelongDao interface {
+	ChangeBelongBySongID(idList int64, userName string, userId int64) error
+	AddBelong(belong *Belong) error
+}
+
+type SongsDao interface {
+	GetSongByID(idList ...int64) (*Songs, error)
+	GetSong() (*Songs, error)
 }

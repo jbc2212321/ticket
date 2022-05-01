@@ -47,3 +47,13 @@ func (*VerifylistImpl) GetVerifyByStatus(statuList ...int64) ([]*Verifylist, err
 	}
 	return *veris, nil
 }
+
+func (*VerifylistImpl) ChangeVerifyListBySongID(idList int64, userName string, userId int64) error {
+	db := GetDB()
+	//	err := db.Create(&Belong).Error
+	err := db.Model(&Verifylist{}).Where("songid = ?", idList).Updates(Verifylist{Username: userName, Userid: userId, Status: 1}).Error
+	if err != nil {
+		return err
+	}
+	return nil
+}
